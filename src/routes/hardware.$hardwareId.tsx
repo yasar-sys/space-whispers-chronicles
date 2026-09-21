@@ -8,6 +8,7 @@ import { StatusBadge } from "@/components/StatusBadge";
 import { LiveSignalWidget } from "@/components/LiveSignalWidget";
 import { QuizCard } from "@/components/QuizCard";
 import { GoldenRecordGame } from "@/components/GoldenRecordGame";
+import { ChapterNav, ChapterCount } from "@/components/ChapterNav";
 import { getHardware } from "@/data/hardware";
 import { useAppState } from "@/lib/app-state";
 import { useLang } from "@/lib/i18n";
@@ -54,12 +55,15 @@ function HardwareDetail() {
         transition={{ duration: 0.45 }}
         className="mx-auto max-w-3xl px-4 py-6 sm:px-6"
       >
-        <Link
-          to="/map"
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground hover:text-gold"
-        >
-          <ArrowLeft className="size-4" /> {t.back}
-        </Link>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <Link
+            to="/map"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground hover:text-gold"
+          >
+            <ArrowLeft className="size-4" /> {t.back}
+          </Link>
+          <ChapterCount currentId={item.id} />
+        </div>
 
         <header className="mt-4">
           <p className="text-sm font-semibold text-nebula">{item.place}</p>
@@ -119,6 +123,8 @@ function HardwareDetail() {
           {item.hasGoldenRecord && <GoldenRecordGame />}
 
           <QuizCard questions={item.quiz} />
+
+          <ChapterNav currentId={item.id} />
         </div>
       </motion.main>
     </>

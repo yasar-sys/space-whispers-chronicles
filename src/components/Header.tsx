@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Volume2, VolumeX, Map, Award, MessageCircleQuestion } from "lucide-react";
+import { Volume2, VolumeX, Map, Award, MessageCircleQuestion, BookOpen } from "lucide-react";
 import { useAppState } from "@/lib/app-state";
 import { useLang } from "@/lib/i18n";
 
