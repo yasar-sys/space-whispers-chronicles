@@ -123,6 +123,8 @@ function HardwareDetail() {
           {item.hasGoldenRecord && <GoldenRecordGame />}
 
           <QuizCard questions={item.quiz} />
+
+          <ChapterNav currentId={item.id} />
         </div>
       </motion.main>
     </>
