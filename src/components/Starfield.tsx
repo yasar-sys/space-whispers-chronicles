@@ -6,12 +6,13 @@ export function Starfield({ count = 90 }: { count?: number }) {
     () =>
       Array.from({ length: count }, (_, i) => {
         // deterministic pseudo-random so SSR and client agree
-        const r = (n: number) => ((Math.sin(i * n) + 1) / 2) * 100;
+        const r = (n: number) =>
+          Number((((Math.sin(i * n) + 1) / 2) * 100).toFixed(2));
         return {
           left: r(12.9898),
           top: r(78.233),
-          size: 1 + (r(43.1) % 2),
-          delay: (r(7.7) % 100) / 25,
+          size: Number((1 + (r(43.1) % 2)).toFixed(2)),
+          delay: Number(((r(7.7) % 100) / 25).toFixed(2)),
         };
       }),
     [count],
