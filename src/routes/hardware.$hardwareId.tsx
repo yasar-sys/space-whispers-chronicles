@@ -8,6 +8,7 @@ import { StatusBadge } from "@/components/StatusBadge";
 import { LiveSignalWidget } from "@/components/LiveSignalWidget";
 import { QuizCard } from "@/components/QuizCard";
 import { GoldenRecordGame } from "@/components/GoldenRecordGame";
+import { ChapterNav, ChapterCount } from "@/components/ChapterNav";
 import { getHardware } from "@/data/hardware";
 import { useAppState } from "@/lib/app-state";
 import { useLang } from "@/lib/i18n";
