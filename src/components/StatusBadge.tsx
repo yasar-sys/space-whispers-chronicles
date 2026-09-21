@@ -17,7 +17,6 @@ export function StatusBadge({
       <span
         className={`inline-flex items-center gap-2 rounded-full border border-alive/50 bg-alive/15 font-semibold text-alive animate-alive-pulse ${pad}`}
       >
-        <span className="size-2 rounded-full bg-alive" />
         🟢 {t.stillActive}
       </span>
     );
@@ -27,7 +26,6 @@ export function StatusBadge({
     <span
       className={`inline-flex items-center gap-2 rounded-full border border-silent/40 bg-muted font-semibold text-muted-foreground ${pad}`}
     >
-      <span className="size-2 rounded-full bg-silent" />
       🔴 {t.lastContact}: {lastContactYear}
     </span>
   );

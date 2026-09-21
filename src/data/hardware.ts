@@ -61,7 +61,7 @@ export const hardware: Hardware[] = [
     id: "apollo-lunar-module",
     name: "Apollo Lunar Module Debris",
     place: "The Moon",
-    marker: { x: 58.5, y: 35.3 },
+    marker: { x: 62, y: 28 },
     launchYear: 1969,
     isActive: false,
     lastContactYear: 1972,
