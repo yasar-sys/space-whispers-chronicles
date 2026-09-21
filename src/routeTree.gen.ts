@@ -10,33 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AskRouteImport } from './routes/ask'
+import { Route as BadgesRouteImport } from './routes/badges'
+import { Route as MapRouteImport } from './routes/map'
+import { Route as HardwareHardwareIdRouteImport } from './routes/hardware.$hardwareId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AskRoute = AskRouteImport.update({
+  id: '/ask',
+  path: '/ask',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BadgesRoute = BadgesRouteImport.update({
+  id: '/badges',
+  path: '/badges',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapRoute = MapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HardwareHardwareIdRoute = HardwareHardwareIdRouteImport.update({
+  id: '/hardware/$hardwareId',
+  path: '/hardware/$hardwareId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ask': typeof AskRoute
+  '/badges': typeof BadgesRoute
+  '/map': typeof MapRoute
+  '/hardware/$hardwareId': typeof HardwareHardwareIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ask': typeof AskRoute
+  '/badges': typeof BadgesRoute
+  '/map': typeof MapRoute
+  '/hardware/$hardwareId': typeof HardwareHardwareIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ask': typeof AskRoute
+  '/badges': typeof BadgesRoute
+  '/map': typeof MapRoute
+  '/hardware/$hardwareId': typeof HardwareHardwareIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/ask' | '/badges' | '/map' | '/hardware/$hardwareId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/ask' | '/badges' | '/map' | '/hardware/$hardwareId'
+  id: '__root__' | '/' | '/ask' | '/badges' | '/map' | '/hardware/$hardwareId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AskRoute: typeof AskRoute
+  BadgesRoute: typeof BadgesRoute
+  MapRoute: typeof MapRoute
+  HardwareHardwareIdRoute: typeof HardwareHardwareIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +88,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ask': {
+      id: '/ask'
+      path: '/ask'
+      fullPath: '/ask'
+      preLoaderRoute: typeof AskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/badges': {
+      id: '/badges'
+      path: '/badges'
+      fullPath: '/badges'
+      preLoaderRoute: typeof BadgesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/map': {
+      id: '/map'
+      path: '/map'
+      fullPath: '/map'
+      preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hardware/$hardwareId': {
+      id: '/hardware/$hardwareId'
+      path: '/hardware/$hardwareId'
+      fullPath: '/hardware/$hardwareId'
+      preLoaderRoute: typeof HardwareHardwareIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AskRoute: AskRoute,
+  BadgesRoute: BadgesRoute,
+  MapRoute: MapRoute,
+  HardwareHardwareIdRoute: HardwareHardwareIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
