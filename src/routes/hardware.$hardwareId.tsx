@@ -54,12 +54,15 @@ function HardwareDetail() {
         transition={{ duration: 0.45 }}
         className="mx-auto max-w-3xl px-4 py-6 sm:px-6"
       >
-        <Link
-          to="/map"
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground hover:text-gold"
-        >
-          <ArrowLeft className="size-4" /> {t.back}
-        </Link>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <Link
+            to="/map"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground hover:text-gold"
+          >
+            <ArrowLeft className="size-4" /> {t.back}
+          </Link>
+          <ChapterCount currentId={item.id} />
+        </div>
 
         <header className="mt-4">
           <p className="text-sm font-semibold text-nebula">{item.place}</p>

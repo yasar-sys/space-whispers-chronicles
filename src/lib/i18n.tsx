@@ -42,6 +42,26 @@ const en = {
   soundOn: "Sound on",
   soundOff: "Sound off",
   imagePlaceholderNote: "PLACEHOLDER IMAGE — to be replaced with NASA archive photo",
+  chapter: "Chapter",
+  previousChapter: "Previous chapter",
+  nextChapter: "Next chapter",
+  classroom: "Classroom",
+  classroomTitle: "Classroom Mode",
+  classroomIntro:
+    "A teacher's view of the whole journey: what each chapter covers, how long it takes, and questions to spark discussion.",
+  missionOverview: "Mission overview",
+  discussionPrompts: "Discussion prompts",
+  groupProgress: "Group progress",
+  groupProgressHint:
+    "This device's progress — use it on the classroom screen, then reset it for the next group.",
+  resetProgress: "Reset for next group",
+  resetDone: "Progress cleared. Ready for the next group.",
+  bigIdea: "Big idea",
+  vocabulary: "Vocabulary",
+  minutes: "min",
+  openChapter: "Open chapter",
+  totalTime: "Total lesson time",
+  notVisited: "Not yet visited",
 };
 
 export type Strings = typeof en;
